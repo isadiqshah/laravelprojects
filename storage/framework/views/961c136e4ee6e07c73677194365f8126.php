@@ -30,16 +30,20 @@
     <!-- Start DEMO HTML (Use the following code into your project)-->
     <div class="wrapper">
         <?php echo $__env->make('layouts._message', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <div class="d-flex justify-content-center" style="margin-top: 0px">
+            <a href="<?php echo e(route('home')); ?>"><img src="<?php echo e(asset('assets/img/logoHHH.png')); ?>" alt="Your Logo"
+                                               style="height: 4vw; width: auto; margin-bottom: -30px"></a>
+        </div>
         <div class="title">Rate your Experience</div>
         <div class="content">We highly value your feedback! Kindly take a moment to rate your experience and provide us with your valuable feedback.</div>
         <form action="<?php echo e(route('save_order_feedback',['order_id' => $order_id])); ?>" method="POST">
             <?php echo csrf_field(); ?>
             <div class="rate-box">
-                <input type="radio" value="5" name="star" id="star0"/>
+                <input type="radio" value="5" name="star" id="star0" checked="checked"/>
                 <label class="star" for="star0"></label>
                 <input type="radio" value="4" name="star" id="star1"/>
                 <label class="star" for="star1"></label>
-                <input type="radio" value="3" name="star" id="star2" checked="checked"/>
+                <input type="radio" value="3" name="star" id="star2"/>
                 <label class="star" for="star2"></label>
                 <input type="radio" value="2" name="star" id="star3"/>
                 <label class="star" for="star3"></label>

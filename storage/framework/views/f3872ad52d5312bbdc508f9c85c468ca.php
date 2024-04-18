@@ -3,11 +3,11 @@
 
     <div class="d-flex align-items-center justify-content-between">
         <a href="<?php echo e(route('home')); ?>" class="logo d-flex align-items-center">
-            <img src="<?php echo e(url('assets/img/logo.png')); ?>" alt="">
-            <span class="d-none d-lg-block">SadiqShah</span>
+            <img src="<?php echo e(asset('assets/img/logoH.svg')); ?>" alt="Your Logo">
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
+    </div>
+
 
     <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
@@ -175,8 +175,9 @@
 
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile" style="padding: 0px;">
 
+
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="">
+                        <a class="dropdown-item d-flex align-items-center" href="<?php echo e(route('account_setting')); ?>">
                             <i class="bi bi-gear"></i>
                             <span>Account Settings</span>
                         </a>

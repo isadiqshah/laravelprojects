@@ -9,7 +9,7 @@
         <div
             class="d-flex flex-column align-items-center justify-content-center"
             style="min-height: 400px">
-            <h3 class="display-3 font-weight-bold text-white">
+            <h3 class="display-3 font-weight-bold text-white mt-5">
                 <?php if(!empty($header_title)): ?>
                     <?php echo e($header_title); ?>
 

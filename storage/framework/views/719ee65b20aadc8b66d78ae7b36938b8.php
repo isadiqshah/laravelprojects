@@ -3,15 +3,17 @@
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
-        <li class="nav-item">
-            <a class="nav-link <?php if(Request::segment(2) !== 'dashboard'): ?> collapsed <?php endif; ?>"
-               href="<?php echo e(route('dashboard')); ?>">
-                <i class="bi bi-grid"></i>
-                <span>Dashboard</span>
-            </a>
-        </li>
-
         <?php if(Auth::user()->role === 1): ?>
+
+            <li class="nav-item">
+                <a class="nav-link <?php if(Request::segment(2) !== 'dashboard'): ?> collapsed <?php endif; ?>"
+                   href="<?php echo e(route('dashboard')); ?>">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+
 
             <li class="nav-item">
                 <a class="nav-link <?php if(Request::segment(2) !== 'category'): ?> collapsed <?php endif; ?>"

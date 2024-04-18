@@ -1,11 +1,15 @@
-<!-- Navbar Start -->
+
 <div class="container-fluid bg-light position-fixed shadow" style="z-index: 999;">
     <nav
-        class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
-        <a href="" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px">
-            <i class="flaticon-043-teddy-bear"></i>
-            <span class="text-primary">SadiqShah</span>
-        </a>
+        class="navbar navbar-expand-lg bg-light navbar-light py- py-lg-0 px-0 px-lg-5">
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="<?php echo e(route('home')); ?>" class="logo d-flex align-items-center">
+                <img src="<?php echo e(asset('front/img/logoHHH.png')); ?>" alt="Your Logo"
+                     style="height: 4.5vw; width: auto; margin-top: -80px; margin-bottom: -80px">
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div>
+
         <button
             type="button"
             class="navbar-toggler"
@@ -36,6 +40,9 @@
                     Us</a>
             </div>
 
+            <?php if(auth()->check() && auth()->user()->role === 1): ?>
+                <a href="<?php echo e(route('dashboard')); ?>" class="btn btn-primary px-4 mr-2">Admin Panel</a>
+            <?php endif; ?>
 
             <?php if(auth()->check()): ?>
                 <a href="<?php echo e(route('logout')); ?>" class="btn btn-primary px-4">Logout</a>

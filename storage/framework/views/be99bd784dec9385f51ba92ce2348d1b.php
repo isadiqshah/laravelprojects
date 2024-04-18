@@ -5,7 +5,7 @@
             <div class="col-lg-5">
                 <img
                     class="img-fluid rounded mb-5 mb-lg-0"
-                    src="<?php echo e(asset('assets/img/About Us.jpeg')); ?>"
+                    src="<?php echo e(asset('front/img/About Us.jpeg')); ?>"
                     alt=""
                 />
             </div>
@@ -25,7 +25,7 @@
 
                 <div class="row pt-2 pb-4">
                     <div class="col-6 col-md-4">
-                        <img class="img-fluid rounded" src="<?php echo e(asset('assets/img/whatwe.jpg')); ?>" alt="" />
+                        <img class="img-fluid rounded" src="<?php echo e(asset('front/img/whatwe.jpg')); ?>" alt="" />
                     </div>
                     <div class="col-6 col-md-8">
                         <ul class="list-inline m-0">

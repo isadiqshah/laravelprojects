@@ -15,7 +15,7 @@
     <?php endif; ?>
 
     <!-- Favicons -->
-    <link href="<?php echo e(asset('assets/img/favicon.png')); ?>" rel="icon">
+    <link href="<?php echo e(asset('assets/img/logo.svg')); ?>" rel="icon">
     <link href="<?php echo e(asset('assets/img/apple-touch-icon.png')); ?>" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -44,12 +44,11 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
-                        <div class="d-flex justify-content-center py-3">
-                            <a href="<?php echo e(url('')); ?>" class="logo d-flex align-items-center w-auto">
-                                <img src="<?php echo e(url('assets/img/logo.png')); ?>" alt="">
-                                <span class="d-none d-lg-block">SadiqShah</span>
-                            </a>
-                        </div><!-- End Logo -->
+
+                        <div class="d-flex justify-content-center" style="margin-top: 0px">
+                            <a href="<?php echo e(route('home')); ?>"><img src="<?php echo e(asset('assets/img/logoHHH.png')); ?>" alt="Your Logo"
+                                                               style="height: 5vw; width: auto; margin-bottom: 10px"></a>
+                        </div>
 
                         <div class="card mb-3">
 

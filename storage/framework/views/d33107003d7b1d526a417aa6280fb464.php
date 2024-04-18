@@ -1,19 +1,14 @@
 <?php $__env->startSection('style'); ?>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
 
-
-
-
     <style>
         /* Custom CSS for carousel title and description */
         .carousel-caption h5 {
-            font-size: 4.5rem;
+            font-size: 4rem;
             font-family: "Handlee", cursive;
             font-weight: 700 !important;
             line-height: 1.2;
@@ -29,7 +24,7 @@
         .carousel-caption p {
             color: white;
             font-weight: lighter;
-            font-size: 1rem;
+            font-size: 1.2rem;
             font-family: "Calibri Light", cursive;
         }
         .wrapper {
@@ -37,19 +32,20 @@
             height: 100%;
             background: black;
             position: absolute;
-            opacity: 0.5;
+            opacity: 0.4;
         }
     </style>
 
     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <?php $__currentLoopData = $sliders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $slider): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="<?php echo e($key); ?>" class="<?php echo e($key === 0 ? 'active' : ''); ?>" aria-label="Slide <?php echo e($key + 1); ?>"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="<?php echo e($key); ?>"
+                        class="<?php echo e($key === 0 ? 'active' : ''); ?>" aria-label="Slide <?php echo e($key + 1); ?>"></button>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
         <div class="carousel-inner">
             <?php $__currentLoopData = $sliders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $slider): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="carousel-item <?php echo e($key === 0 ? 'active' : ''); ?>" data-bs-interval="8000">
+                <div class="carousel-item <?php echo e($key === 0 ? 'active' : ''); ?>" data-bs-interval="5000">
                     <div class="wrapper"></div>
                     <?php if($slider->image_file): ?>
                         <img src="<?php echo e(asset('images/' . $slider->image_file)); ?>" class="d-block w-100" alt="...">
@@ -57,7 +53,7 @@
                     <div class="carousel-caption d-none d-md-block">
                         <h5><?php echo e($slider->title); ?></h5>
                         <br>
-                        <p><?php echo e($slider->description); ?></p>
+                        <p><?php echo $slider->description; ?></p>
                     </div>
                 </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -191,89 +187,8 @@
 <?php echo $__env->make('our_services', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 
-    <!-- Registration Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7 mb-5 mb-lg-0">
-                    <p class="section-title pr-5">
-                        <span class="pr-2">Book A Seat</span>
-                    </p>
-                    <h1 class="mb-4">Book A Seat For Your Kid</h1>
-                    <p>
-                        Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo
-                        dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo.
-                        Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
-                        dolor
-                    </p>
-                    <ul class="list-inline m-0">
-                        <li class="py-2">
-                            <i class="fa fa-check text-success mr-3"></i>Labore eos amet
-                            dolor amet diam
-                        </li>
-                        <li class="py-2">
-                            <i class="fa fa-check text-success mr-3"></i>Etsea et sit dolor
-                            amet ipsum
-                        </li>
-                        <li class="py-2">
-                            <i class="fa fa-check text-success mr-3"></i>Diam dolor diam
-                            elitripsum vero.
-                        </li>
-                    </ul>
-                    <a href="" class="btn btn-primary mt-4 py-2 px-4">Book Now</a>
-                </div>
-                <div class="col-lg-5">
-                    <div class="card border-0">
-                        <div class="card-header bg-secondary text-center p-4">
-                            <h1 class="text-white m-0">Book A Seat</h1>
-                        </div>
-                        <div class="card-body rounded-bottom bg-primary p-5">
-                            <form>
-                                <div class="form-group">
-                                    <input
-                                        type="text"
-                                        class="form-control border-0 p-4"
-                                        placeholder="Your Name"
-                                        required="required"
-                                    />
-                                </div>
-                                <div class="form-group">
-                                    <input
-                                        type="email"
-                                        class="form-control border-0 p-4"
-                                        placeholder="Your Email"
-                                        required="required"
-                                    />
-                                </div>
-                                <div class="form-group">
-                                    <select
-                                        class="custom-select border-0 px-4"
-                                        style="height: 47px"
-                                    >
-                                        <option selected>Select A Class</option>
-                                        <option value="1">Class 1</option>
-                                        <option value="2">Class 1</option>
-                                        <option value="3">Class 1</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <button
-                                        class="btn btn-secondary btn-block border-0 py-3"
-                                        type="submit"
-                                    >
-                                        Book Now
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Registration End -->
 
-
+    <!-- Feedback Start -->
     <div class="container-fluid py-5">
         <div class="container p-0">
             <div class="text-center pb-2">
@@ -284,21 +199,18 @@
             </div>
             <div class="owl-carousel testimonial-carousel">
                 <?php $__currentLoopData = $feedbacks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $feedback): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
                     <div class="testimonial-item px-3">
                         <div class="bg-light shadow-sm rounded mb-4 p-4">
                             <h3 class="fas fa-quote-left text-primary mr-3"></h3>
-                            <?php echo e($feedback->feedback); ?>
-
+                            <p><?php echo e($feedback->feedback); ?></p>
                         </div>
                         <div class="d-flex align-items-center">
-                            <img class="rounded-circle" src="<?php echo e($feedback->image); ?>" style="width: 70px; height: 70px" alt="Image"/>
                             <div class="pl-3">
-                                <h5><?php echo e($feedback->title); ?></h5>
-                                
                                 <div class="rating">
                                     <?php for($i = 1; $i <= 5; $i++): ?>
                                         <?php if($i <= $feedback->rating): ?>
-                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked" style="color: #17A2B8"></span>
                                         <?php else: ?>
                                             <span class="fa fa-star"></span>
                                         <?php endif; ?>
@@ -311,8 +223,11 @@
             </div>
         </div>
     </div>
+    <!-- Feedback End -->
 
-<!-- Blog Start -->
+
+
+    <!-- Blog Start -->
     <div class="container-fluid pt-5">
         <div class="container">
             <div class="text-center pb-2">
@@ -322,7 +237,7 @@
                 <h1 class="mb-4">Latest Articles From Blog</h1>
             </div>
             <div class="row pb-3">
-                <?php $__currentLoopData = $blogs->take(6); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $blog): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php $__currentLoopData = $blogs->take(3); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $blog): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="col-lg-4 mb-4">
                         <div class="card border-0 shadow-sm mb-2">
                             <img class="card-img-top mb-2" src="<?php echo e($blog->getImage()); ?>"
@@ -361,44 +276,147 @@
     </div>
     <!-- Blog End -->
 
+    <!-- Contact Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                <p class="section-title px-5">
+                    <span class="px-2">Get In Touch</span>
+                </p>
+                <h1 class="mb-4">Contact Us For Any Query</h1>
+            </div>
+            <?php echo $__env->make('layouts._message', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <div class="row">
+                <div class="col-lg-7 mb-5">
+
+                    <div class="contact-form">
+                        <div id="success"></div>
+                        <form action="<?php echo e(route('contact_form_submit')); ?>" method="POST" name="sentMessage" id="contactForm" novalidate="novalidate">
+                            <?php echo csrf_field(); ?>
+                            <div class="control-group">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required="required"
+                                       data-validation-required-message="Please enter your name"/>
+                                <?php $__errorArgs = ['name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <p class="help-block text-danger"><?php echo e($message); ?></p>
+                                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                <br>
+                            </div>
+                            <div class="control-group">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="required"
+                                       data-validation-required-message="Please enter your email"/>
+                                <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <p class="help-block text-danger"><?php echo e($message); ?></p>
+                                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                <br>
+                            </div>
+
+                            <div class="control-group">
+                                  <textarea
+                                          class="form-control"
+                                          rows="6"
+                                          name="message"
+                                          id="message"
+                                          placeholder="Please Enter Your Message Here..."
+                                          required="required"
+                                          data-validation-required-message="Please enter your message"
+                                  ></textarea>
+                                <?php $__errorArgs = ['message'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <p class="help-block text-danger"><?php echo e($message); ?></p>
+                                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                <br>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5 mb-5">
+                    <p>
+                        Thank you for considering us as your trusted resource.
+                        We value your input and are eager to serve you in the best possible manner.
+                        Don't hesitate to get in touch with us — We're here to help make your experience
+                        with us exceptional in every way.
+                    </p>
+                    <div class="d-flex">
+                        <i
+                                class="fa fa-map-marker-alt d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+                                style="width: 45px; height: 45px"
+                        ></i>
+                        <div class="pl-3">
+                            <h5>Address</h5>
+                            <p><a href="https://www.google.com/maps/search/?api=1&query=97+Street%2C+Sector+G-11%2C+Islamabad%2C+Pakistan"
+                                  class="text-decoration-none">97 Street, Sector G-11, Islamabad, Pakistan</a></p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <i
+                                class="fa fa-envelope d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+                                style="width: 45px; height: 45px"
+                        ></i>
+                        <div class="pl-3">
+                            <h5>Email</h5>
+                            <p><a href="mailto:sadiqshah77881@gmail.com" class="text-decoration-none">sadiqshah77881@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <i
+                                class="fa fa-phone-alt d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+                                style="width: 45px; height: 45px"
+                        ></i>
+                        <div class="pl-3">
+                            <h5>Phone</h5>
+                            <p><a href="tel:+923439428065" class="text-decoration-none">+92 343 9428065</a></p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <i
+                                class="far fa-clock d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+                                style="width: 45px; height: 45px"
+                        ></i>
+                        <div class="pl-3">
+                            <h5>Opening Hours</h5>
+                            <strong>Always Open</strong>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Contact End -->
+
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('script'); ?>
-    <script src="path/to/bootstrap.bundle.min.js"></script>
-
-    <!-- jQuery library -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- Isotope library -->
-    <script src="path/to/isotope.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-    <script>
-        $(document).ready(function(){
-            $('.testimonial-carousel').owlCarousel({
-                loop:true,
-                margin:10,
-                nav:false,
-                dots:true,
-                responsive:{
-                    0:{
-                        items:1
-                    },
-                    600:{
-                        items:2
-                    },
-                    1000:{
-                        items:3
-                    }
-                }
-            });
-        });
-    </script>
 
 
 <?php $__env->stopSection(); ?>
+
 
 
 
